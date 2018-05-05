@@ -1,1 +1,0 @@
-require 'mstdn_ivory'
