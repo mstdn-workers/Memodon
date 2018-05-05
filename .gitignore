@@ -1,4 +1,4 @@
-
+1
 # Created by https://www.gitignore.io/api/ruby,macos,emacs
 
 ### Emacs ###
@@ -150,3 +150,4 @@ build-iPhoneSimulator/
 # End of https://www.gitignore.io/api/ruby,macos,emacs
 
 /etc
+/db/development.sqlite3
