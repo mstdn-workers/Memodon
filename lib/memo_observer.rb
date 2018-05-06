@@ -2,8 +2,8 @@ require 'mstdn_ivory'
 
 class MemoObserver
   def initialize
-    first = Memo.order('id desc').first
-    @since_id = first ? first.id : 1
+    first = Memo.order('status_id desc').first
+    @since_id = first ? first.status_id : 1
     @max_id = nil
     @client = MstdnIvory::Client.new('https://mstdn-workers.com')
   end
@@ -18,6 +18,10 @@ class MemoObserver
       @max_id = timeline[-1].id
       sleep(1.5)
       behavior
+    else
+      @max_id = nil
+      first = Memo.order('status_id desc').first
+      @since_id = first ? first.status_id : 1
     end
   end
 

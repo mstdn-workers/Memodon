@@ -4,4 +4,10 @@ require './lib/memo_observer'
 AppRegister.new.register_app
 
 observer = MemoObserver.new
-observer.behavior
+
+Thread.new do
+  loop do
+    observer.behavior
+    sleep(20)
+  end
+end
