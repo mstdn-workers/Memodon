@@ -1,5 +1,7 @@
 require 'mstdn_ivory'
 
+# メモをデータベースにinsertするクラス
+# behaviorメソッドで自動的に(未登録の)メモ(と未登録のアカウント)をinsertする
 class MemoObserver
   def initialize
     first = Memo.order('status_id desc').first

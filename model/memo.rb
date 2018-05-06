@@ -1,4 +1,4 @@
-class Memo < ActiveRecord::Base
+class Memo < ActiveRecord::Base # :nodoc:
   belongs_to :user
 
   validates_presence_of :user

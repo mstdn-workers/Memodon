@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class User < ActiveRecord::Base # :nodoc:
   has_many :memo
 
   accepts_nested_attributes_for :memo
