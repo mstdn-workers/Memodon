@@ -7,6 +7,7 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 gem 'sinatra'
 gem 'mstdn_ivory'
 gem 'activerecord', require: 'active_record'
+gem 'thin'
 
 group :production do
   gem 'pg'
