@@ -9,6 +9,9 @@ gem 'mstdn_ivory'
 gem 'activerecord', require: 'active_record'
 gem 'thin'
 
+gem 'slim'
+gem 'sass'
+
 group :production do
   gem 'pg'
 end
