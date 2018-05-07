@@ -1,4 +1,4 @@
 # Memodon
 
 ## Memo
-- 使用するcssはMaterizalize
+- 使用するcssはMaterialize
