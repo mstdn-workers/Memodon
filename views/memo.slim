@@ -1,2 +1,7 @@
-- @memos.each do |memo|
-  == memo[:memo_status]
+.row
+  - @memos.each do |memo|
+    .col.s10.offset-s1
+      .card.orange.lighten-3
+        .card-content.black-text
+          .status-content
+            == memo[:memo_status]

@@ -10,6 +10,10 @@ get '/' do
 end
 
 get '/memo' do
-  @memos = User.find(424).memo.order('status_id desc')
+  user = User.find(424)
+  @memos = user.memo.order('status_id desc')
+
+  @name = user.username
+  @name = user.display + '@' + @name unless user.display.empty?
   slim :memo
 end
