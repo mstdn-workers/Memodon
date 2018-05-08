@@ -5,3 +5,9 @@
         .card-content.black-text
           .status-content
             == memo[:memo_status]
+          .row.actions
+            .col.s6.center.go-to-toot
+              <a href="https://mstdn-workers.com/@#{@user.username}/#{memo.status_id}" class="card-link"><i class="material-icons medium">subdirectory_arrow_right</i> </a>
+
+            .col.s6.center
+              = "fuga"
