@@ -2,8 +2,15 @@ doctype html
 html
   head
     meta charset="utf-8"
+    / materialize cssを読み込む
+    link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"
+    link rel="stylesheet" type="text/css" href="stylesheets/materialize.min.css" media="screen,projection"
+
     link rel="stylesheet" type="text/css" href="stylesheets/index.css"
+
     title Memodon
   body
-    .title Hello, World
-    == yield
+    .container
+      == yield
+
+    script type="text/javascript" src="scripts/materialize.min.js"
