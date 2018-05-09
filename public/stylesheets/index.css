@@ -5,7 +5,8 @@
 
 .actions {
   border-top: 1px solid rgba(156, 156, 156, 0.5);
-  padding-top: 16px; }
+  padding-top: 12px;
+  margin-top: 24px; }
 
 .card-link {
   font-weight: 600;

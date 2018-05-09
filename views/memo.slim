@@ -1,13 +1,20 @@
-.row
-  - @memos.each do |memo|
-    .col.s10.offset-s1
-      .card.orange.lighten-3
-        .card-content.black-text
-          .status-content
-            == memo[:memo_status]
-          .row.actions
-            .col.s6.center.go-to-toot
-              <a href="https://mstdn-workers.com/@#{@user.username}/#{memo.status_id}" class="card-link"><i class="material-icons medium">subdirectory_arrow_right</i> </a>
+#memos.row
+  / - @memos.each do |memo|
+  /   .col.s10.offset-s1
+  /     .card.orange.lighten-3
+  /       .card-content.black-text
+  /         .status-content
+  /           == memo[:memo_status]
+  /         .row.actions
+  /           .col.s6.center.go-to-toot
+  /             <a href="https://mstdn-workers.com/@#{@user.username}/#{memo.status_id}" class="card-link"><i class="material-icons medium">subdirectory_arrow_right</i> </a>
+  /
+  /           .col.s6.center
+  /             = "fuga"
 
-            .col.s6.center
-              = "fuga"
+script type="text/javascript" src="scripts/memo.js"
+
+javascript:
+  window.onload = () => {
+    getMemos(424)
+  }
