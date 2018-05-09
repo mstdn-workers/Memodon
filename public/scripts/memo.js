@@ -1,11 +1,11 @@
 let searchElm = document.getElementById('search')
 searchElm.addEventListener('input', () => {
   console.log(searchElm.value)
-  getMemos(424, searchElm.value)
+  getMemos(searchElm.value)
 })
 
-function getMemos (id, searchWord = '') {
-  fetch(`/api/memos/${id}?like=${searchWord}`)
+function getMemos (searchWord = '') {
+  fetch(`/api/memos?like=${searchWord}`)
     .then(response => {
       return response.json()
     })
@@ -16,7 +16,7 @@ function getMemos (id, searchWord = '') {
 
       // 要素をすべて削除
       memosElm.textContent = null
-      
+
       for (let i in memos) {
         displayMemo(memosElm, username, memos[i])
       }
