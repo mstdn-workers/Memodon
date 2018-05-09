@@ -1,0 +1,14 @@
+#memos.row
+
+.row.search-area.z-depth-5.yellow.lighten-4
+  .col.s1
+    i.material-icons.medium search
+  .col.s11.input-field
+    input#search.validate placeHolder="検索文字列" type="text"
+
+script type="text/javascript" src="scripts/memo.js"
+
+javascript:
+  window.onload = () => {
+    getMemos()
+  }

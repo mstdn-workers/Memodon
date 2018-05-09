@@ -19,4 +19,5 @@ end
 group :development do
   gem 'sqlite3'
   gem 'rake'
+  gem 'sinatra-contrib'
 end
