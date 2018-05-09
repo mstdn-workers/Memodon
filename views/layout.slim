@@ -10,7 +10,22 @@ html
 
     title Memodon
   body
+    nav
+      .nav-wrapper
+        a href="/"
+          .brand-logo.logo Memodon
+        a.sidenav-trigger href="#" data-target="mobile-nav"
+          i.material-icons menu
+        ul.right.hide-on-med-and-down
+          li
+            a Login
+
+    ul#mobile-nav.sidenav
+      li
+        a Login
+
     .container
       == yield
 
     script type="text/javascript" src="scripts/materialize.min.js"
+    script type="text/javascript" src="scripts/layout.js"

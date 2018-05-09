@@ -1,3 +1,8 @@
+.logo {
+  left: 24px;
+  display: flex;
+  align-items: center; }
+
 .status-content {
   font-weight: 400;
   font-size: 18px;
