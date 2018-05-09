@@ -1,5 +1,11 @@
-function getMemos (id) {
-  fetch('/api/memos/' + id)
+let searchElm = document.getElementById('search')
+searchElm.addEventListener('input', () => {
+  console.log(searchElm.value)
+  getMemos(424, searchElm.value)
+})
+
+function getMemos (id, searchWord = '') {
+  fetch(`/api/memos/${id}?like=${searchWord}`)
     .then(response => {
       return response.json()
     })
@@ -8,6 +14,9 @@ function getMemos (id) {
       let memos = json.memos
       let memosElm = document.getElementById('memos')
 
+      // 要素をすべて削除
+      memosElm.textContent = null
+      
       for (let i in memos) {
         displayMemo(memosElm, username, memos[i])
       }
