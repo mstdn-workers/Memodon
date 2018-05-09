@@ -1,4 +1,5 @@
 require 'sass/plugin/rack'
+require "sinatra/reloader" if development?
 
 # sassをコンパイルしてcssをよしなにしてくれるようにする
 use Sass::Plugin::Rack
