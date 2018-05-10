@@ -6,18 +6,126 @@
   -moz-animation-fill-mode: both
   animation-fill-mode: both
 
-@mixin keyframes($animation-name)
-  @-webkit-keyframes $animation-name
-    @content
-  @-moz-keyframes $animation-name
-    @content
-  @keyframes $animation-name
-    @content
-
+$index-title-width: 40vw
+$index-title-height: 240px
+$animation-line-width: 2px
+$title-animation-duration: 0.4s
 
 .logo
   left: 24px
   display: flex
   align-items: center
 
+.title-area
+  width: 100%
+  height: 80vh
+  display: flex
+  align-items: center
+  justify-content: center
+
+.index-title
+  display: flex
+  align-items: center
+  justify-content: center
+  position: relative
+  width: $index-title-width
+  height: $index-title-height
+  line-height: 200px
+  overflow: hidden
+  margin: 0
+
+  &__x:before, &__x:after, &__y:before, &__y:after
+    content: ''
+    position: absolute
+    background: #000
+
+  &__y:before
+    bottom: 0
+    right: -$index-title-width
+    width: $index-title-width
+    height: $animation-line-width
+    animation: topLine $title-animation-duration ease $title-animation-duration * 2 forwards
+
+  &__y:after
+    top: 0
+    left: -$index-title-width
+    width: $index-title-width
+    height: $animation-line-width
+    animation: bottomLine $title-animation-duration ease 0s forwards
+
+  &__x:before
+    top: -$index-title-height
+    right: 0
+    width: $animation-line-width
+    height: $index-title-height
+    animation: rightLine $title-animation-duration ease $title-animation-duration forwards
+
+  &__x:after
+    bottom: -$index-title-height
+    left: 0
+    width: $animation-line-width
+    height: $index-title-height
+    animation: leftLine $title-animation-duration ease $title-animation-duration * 3 forwards
+
+
+@keyframes topLine
+  100%
+    right: 0
+
+@-webkit-keyframes topLine
+  100%
+    right: 0
+
+@-moz-keyframes topLine
+  100%
+    right: 0
+
+@keyframes bottomLine
+  100%
+    left: 0
+
+@-webkit-keyframes bottomLine
+  100%
+    left: 0
+
+@-moz-keyframes bottomLine
+  100%
+    left: 0
+
+@keyframes rightLine
+  100%
+    top: 0
+
+@-webkit-keyframes rightLine
+  100%
+    top: 0
+
+@-moz-keyframes rightLine
+  100%
+    top: 0
+
+@keyframes leftLine
+  100%
+    bottom: 0
+
+@-webkit-keyframes leftLine
+  100%
+    bottom: 0
+
+@-moz-keyframes leftLine
+  100%
+    bottom: 0
+
 @import 'memo'
+
+// @keyframes id
+//   100%
+//     right: 0
+//
+// @-webkit-keyframes id
+//   100%
+//     right: 0
+//
+// @-moz-keyframes id
+//   100%
+//     right: 0
