@@ -1,7 +1,7 @@
 /*
 Error: Undefined mixin 'animation'.
-        on line 19 of /Users/t0p_l1ght/Documents/Memodon/public/stylesheets/sass/memo.sass, in `animation'
-        from line 19 of /Users/t0p_l1ght/Documents/Memodon/public/stylesheets/sass/memo.sass
+        on line 19 of public/stylesheets/sass/memo.sass, in `animation'
+        from line 19 of public/stylesheets/sass/memo.sass
 
 14:   font-size: 18px
 15:   color: black
@@ -16,8 +16,8 @@ Error: Undefined mixin 'animation'.
 24: .search-area
 
 Backtrace:
-/Users/t0p_l1ght/Documents/Memodon/public/stylesheets/sass/memo.sass:19:in `animation'
-/Users/t0p_l1ght/Documents/Memodon/public/stylesheets/sass/memo.sass:19
+public/stylesheets/sass/memo.sass:19:in `animation'
+public/stylesheets/sass/memo.sass:19
 /Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
 /Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/stack.rb:98:in `block in with_mixin'
 /Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/stack.rb:135:in `with_frame'
@@ -125,4 +125,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'animation'.\A         on line 19 of /Users/t0p_l1ght/Documents/Memodon/public/stylesheets/sass/memo.sass, in `animation'\A         from line 19 of /Users/t0p_l1ght/Documents/Memodon/public/stylesheets/sass/memo.sass\A \A 14:   font-size: 18px\A 15:   color: black\A 16: \A 17: .go-to-toot\A 18:   &:hover\A 19:     @include animation(goToToot 0.5s ease 0.2s infinite)\A 20: \A 21: .memo-link-icon\A 22:   font-size: 32px\A 23: \A 24: .search-area"; }
+  content: "Error: Undefined mixin 'animation'.\A         on line 19 of public/stylesheets/sass/memo.sass, in `animation'\A         from line 19 of public/stylesheets/sass/memo.sass\A \A 14:   font-size: 18px\A 15:   color: black\A 16: \A 17: .go-to-toot\A 18:   &:hover\A 19:     @include animation(goToToot 0.5s ease 0.2s infinite)\A 20: \A 21: .memo-link-icon\A 22:   font-size: 32px\A 23: \A 24: .search-area"; }
