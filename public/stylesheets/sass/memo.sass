@@ -1,0 +1,56 @@
+.status-content
+  font-weight: 400
+  font-size: 18px
+  word-break: break-all
+
+.actions
+  border-top: 1px solid rgba(156, 156, 156, 0.5)
+  padding-top: 12px
+  margin-top: 24px
+  margin-bottom: 2px
+
+.card-link
+  font-weight: 600
+  font-size: 18px
+  color: black
+
+.go-to-toot
+  &:hover
+    @include animation(goToToot 0.5s ease 0.2s infinite)
+
+.memo-link-icon
+  font-size: 32px
+
+.search-area
+  position: fixed
+  height: 10vh
+  bottom: 6vh
+  left: 8vh
+  right: 8vh
+  border-radius: 8px
+  display: flex
+  align-items: center
+
+@keyframes goToToot
+  0%
+    transform: translateX(0px)
+  50%
+    transform: translateX(20px)
+  100%
+    transform: translateX(0px)
+
+@-webkit-keyframes goToToot
+  0%
+    transform: translateX(0px)
+  50%
+    transform: translateX(20px)
+  100%
+    transform: translateX(0px)
+
+@-moz-keyframes goToToot
+  0%
+    transform: translateX(0px)
+  50%
+    transform: translateX(20px)
+  100%
+    transform: translateX(0px)
