@@ -15,3 +15,7 @@ end
 get '/memo' do
   slim :memo
 end
+
+get '/login' do
+  slim :login
+end
