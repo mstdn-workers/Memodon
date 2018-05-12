@@ -21,9 +21,13 @@ class AppRegister
   end
 
   def client_info
-    client = MstdnIvory::Client.new(MSTDN_URL)
-    res = client.create_app(APP_NAME)
-    [res.client_id, res.client_secret]
+    if exist_info?
+      File.read(FILEPATH).chomp.split('\n')
+    else
+      client = MstdnIvory::Client.new(MSTDN_URL)
+      res = client.create_app(APP_NAME)
+      [res.client_id, res.client_secret]
+    end
   end
 
   def save_client_info(id, secret)
