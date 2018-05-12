@@ -1,8 +1,11 @@
+require 'singleton'
 # Appを登録するclass
 # client, secretを登録する
 # client, secretを保存していない場合は取得して保存する
 # 保存先は/etc/app_info
 class AppRegister
+  include Singleton
+
   FILEPATH = 'etc/app_info'.freeze
   MSTDN_URL = 'https://mstdn-workers.com'.freeze
   APP_NAME = 'memodon'.freeze
