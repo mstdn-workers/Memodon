@@ -33,7 +33,7 @@ $title-color: rgb(238, 155, 101)
 
 .title-area
   width: 100%
-  height: 80vh
+  height: $index-title-height + 20px
   display: flex
   justify-content: center
   position: relative
@@ -121,6 +121,15 @@ $title-color: rgb(238, 155, 101)
       &:before
         @include fadeFromLeftBefore(7)
 
+.link-area
+  position: relative
+  top: 80px
+  width: 100%
+  display: flex
+  justify-content: center
+  opacity: 0
+  @include animation(fadeIn 1s ease $title-animation-duration * 9.5 forwards)
+
 @keyframes topLine
   100%
     right: 0
@@ -203,6 +212,66 @@ $title-color: rgb(238, 155, 101)
     top: 200px
     left: 50%
     opacity: 1
+
+@-webkit-keyframes fadeFromLeft
+  10%
+    opacity: 1
+  30%
+    left: 80%
+    top: 72px
+  40%
+    top: 140px
+    left: 18%
+  50%
+    top: 140px
+    left: 18%
+  80%
+    top: 140px
+    left: 82%
+  90%
+    top: 200px
+    left: 48%
+  100%
+    top: 200px
+    left: 50%
+    opacity: 1
+
+@-moz-keyframes fadeFromLeft
+  10%
+    opacity: 1
+  30%
+    left: 80%
+    top: 72px
+  40%
+    top: 140px
+    left: 18%
+  50%
+    top: 140px
+    left: 18%
+  80%
+    top: 140px
+    left: 82%
+  90%
+    top: 200px
+    left: 48%
+  100%
+    top: 200px
+    left: 50%
+    opacity: 1
+
+@keyframes fadeIn
+  100%
+    opacity: 1
+
+@-webkit-keyframes fadeIn
+  100%
+    opacity: 1
+
+@-moz-keyframes fadeIn
+  100%
+    opacity: 1
+
+
 
 @import 'memo'
 
