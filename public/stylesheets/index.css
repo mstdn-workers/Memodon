@@ -1,7 +1,12 @@
 .logo {
-  left: 24px;
+  position: absolute;
+  left: 5%;
   display: flex;
-  align-items: center; }
+  align-items: content; }
+
+.navbar-menu {
+  position: absolute;
+  right: 5%; }
 
 .title-area {
   width: 100%;
