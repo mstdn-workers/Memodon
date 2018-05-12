@@ -6,10 +6,20 @@
   -moz-animation-fill-mode: both
   animation-fill-mode: both
 
-$index-title-width: 40vw
-$index-title-height: 240px
-$animation-line-width: 2px
+@mixin fadeFromLeftBefore($timing)
+  content: ""
+  position: absolute
+  background: #fff
+  width: 100%
+  height: 100%
+  right: 0%
+  @include animation(fadeFromLeft $title-animation-duration linear $title-animation-duration * $timing forwards)
+
+$index-title-width: 50vw
+$index-title-height: 280px
+$animation-line-width: 3px
 $title-animation-duration: 0.4s
+$title-color: rgb(238, 155, 101)
 
 .logo
   left: 24px
@@ -20,8 +30,9 @@ $title-animation-duration: 0.4s
   width: 100%
   height: 80vh
   display: flex
-  align-items: center
   justify-content: center
+  position: relative
+  top: 60px
 
 .index-title
   display: flex
@@ -37,36 +48,73 @@ $title-animation-duration: 0.4s
   &__x:before, &__x:after, &__y:before, &__y:after
     content: ''
     position: absolute
-    background: #000
+    background: $title-color
 
   &__y:before
     bottom: 0
     right: -$index-title-width
     width: $index-title-width
     height: $animation-line-width
-    animation: topLine $title-animation-duration ease $title-animation-duration * 2 forwards
+    @include animation(topLine $title-animation-duration ease $title-animation-duration * 2 forwards)
 
   &__y:after
     top: 0
     left: -$index-title-width
     width: $index-title-width
     height: $animation-line-width
-    animation: bottomLine $title-animation-duration ease 0s forwards
+    @include animation(bottomLine $title-animation-duration ease 0s forwards)
 
   &__x:before
     top: -$index-title-height
     right: 0
     width: $animation-line-width
     height: $index-title-height
-    animation: rightLine $title-animation-duration ease $title-animation-duration forwards
+    @include animation(rightLine $title-animation-duration ease $title-animation-duration forwards)
 
   &__x:after
     bottom: -$index-title-height
     left: 0
     width: $animation-line-width
     height: $index-title-height
-    animation: leftLine $title-animation-duration ease $title-animation-duration * 3 forwards
+    @include animation(leftLine $title-animation-duration ease $title-animation-duration * 3 forwards)
 
+  &__content
+    color: $title-color
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-flow: column
+
+    &__base
+      height: $index-title-height / 4
+      display: flex
+      justify-content: center
+      align-items: center
+      position: relative
+
+    &__label
+      font-size: 42px
+      font-weight: 600
+      &:before
+        @include fadeFromLeftBefore(5)
+
+    &__icon
+      position: absolute
+      top: 72px
+      left: 20%
+      opacity: 0
+      -webkit-transform: translateX(-50%)
+      transform: translateX(-50%)
+      @include animation(penAnimation $title-animation-duration * 4 linear $title-animation-duration * 4.8 forwards)
+      &__content
+        font-size: 42px
+        color: $title-color + rgb(40, 40, 40)
+
+
+    &__text
+      font-size: 24px
+      &:before
+        @include fadeFromLeftBefore(7)
 
 @keyframes topLine
   100%
@@ -115,6 +163,41 @@ $title-animation-duration: 0.4s
 @-moz-keyframes leftLine
   100%
     bottom: 0
+
+@keyframes fadeFromLeft
+  100%
+    width: 0
+
+@-webkit-keyframes fadeFromLeft
+  100%
+    width: 0
+
+@-moz-keyframes fadeFromLeft
+  100%
+    width: 0
+
+@keyframes penAnimation
+  10%
+    opacity: 1
+  30%
+    left: 80%
+    top: 72px
+  40%
+    top: 140px
+    left: 18%
+  50%
+    top: 140px
+    left: 18%
+  80%
+    top: 140px
+    left: 82%
+  90%
+    top: 200px
+    left: 48%
+  100%
+    top: 200px
+    left: 50%
+    opacity: 1
 
 @import 'memo'
 
