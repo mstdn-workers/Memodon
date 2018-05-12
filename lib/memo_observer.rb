@@ -4,8 +4,8 @@ require 'mstdn_ivory'
 # behaviorメソッドで自動的に(未登録の)メモ(と未登録のアカウント)をinsertする
 class MemoObserver
   def initialize
-    first = Memo.order('status_id desc').first
-    @since_id = first ? first.status_id : 1
+    first = Memo.order('id desc').first
+    @since_id = first ? first.id + 1 : 1
     @max_id = nil
     @client = MstdnIvory::Client.new('https://mstdn-workers.com')
   end
@@ -22,8 +22,8 @@ class MemoObserver
       behavior
     else
       @max_id = nil
-      first = Memo.order('status_id desc').first
-      @since_id = first ? first.status_id : 1
+      first = Memo.order('id desc').first
+      @since_id = first ? first.id + 1 : 1
     end
   end
 
@@ -47,7 +47,7 @@ class MemoObserver
     content = status.content
     content = status.spoiler_text + '</br>' + content unless status.spoiler_text.empty?
     user.memo.create do |m|
-      m.status_id = status.id
+      m.id = status.id.to_i
       m.memo_status = content
     end
   end

@@ -6,61 +6,284 @@
   -moz-animation-fill-mode: both
   animation-fill-mode: both
 
+@mixin fadeFromLeftBefore($timing)
+  content: ""
+  position: absolute
+  background: #fff
+  width: 100%
+  height: 100%
+  right: 0%
+  @include animation(fadeFromLeft $title-animation-duration linear $title-animation-duration * $timing forwards)
 
-.status-content
-  font-weight: 400
-  font-size: 18px
-  word-break: break-all
+$index-title-width: 50vw
+$index-title-height: 280px
+$animation-line-width: 3px
+$title-animation-duration: 0.4s
+$title-color: rgb(238, 155, 101)
 
-.actions
-  border-top: 1px solid rgba(156, 156, 156, 0.5)
-  padding-top: 12px
-  margin-top: 24px
-  margin-bottom: 2px
+.logo
+  position: absolute
+  left: 5%
+  display: flex
+  align-items: content
 
-.card-link
-  font-weight: 600
-  font-size: 18px
-  color: black
+.navbar-menu
+  position: absolute
+  right: 5%
 
-.go-to-toot
-  &:hover
-    @include animation(goToToot 0.5s ease 0.2s infinite)
+.title-area
+  width: 100%
+  height: $index-title-height + 20px
+  display: flex
+  justify-content: center
+  position: relative
+  top: 60px
 
-.memo-link-icon
-  font-size: 32px
-
-.search-area
-  position: fixed
-  height: 10vh
-  bottom: 6vh
-  left: 8vh
-  right: 8vh
-  border-radius: 8px
+.index-title
   display: flex
   align-items: center
+  justify-content: center
+  position: relative
+  width: $index-title-width
+  height: $index-title-height
+  line-height: 200px
+  overflow: hidden
+  margin: 0
+  transition: all 0.4s ease-out
+
+  &__x:before, &__x:after, &__y:before, &__y:after
+    content: ''
+    position: absolute
+    background: $title-color
+
+  &__y:before
+    bottom: 0
+    right: -$index-title-width
+    width: $index-title-width
+    height: $animation-line-width
+    @include animation(topLine $title-animation-duration ease $title-animation-duration * 2 forwards)
+
+  &__y:after
+    top: 0
+    left: -$index-title-width
+    width: $index-title-width
+    height: $animation-line-width
+    @include animation(bottomLine $title-animation-duration ease 0s forwards)
+
+  &__x:before
+    top: -$index-title-height
+    right: 0
+    width: $animation-line-width
+    height: $index-title-height
+    @include animation(rightLine $title-animation-duration ease $title-animation-duration forwards)
+
+  &__x:after
+    bottom: -$index-title-height
+    left: 0
+    width: $animation-line-width
+    height: $index-title-height
+    @include animation(leftLine $title-animation-duration ease $title-animation-duration * 3 forwards)
+
+  &__content
+    color: $title-color
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-flow: column
+
+    &__base
+      height: $index-title-height / 4
+      display: flex
+      justify-content: center
+      align-items: center
+      position: relative
+
+    &__label
+      font-size: 42px
+      font-weight: 600
+      &:before
+        @include fadeFromLeftBefore(5)
+
+    &__icon
+      position: absolute
+      top: 72px
+      left: 20%
+      opacity: 0
+      -webkit-transform: translateX(-50%)
+      transform: translateX(-50%)
+      @include animation(penAnimation $title-animation-duration * 4 linear $title-animation-duration * 4.8 forwards)
+      &__content
+        font-size: 42px
+        color: $title-color + rgb(40, 40, 40)
 
 
-@keyframes goToToot
-  0%
-    transform: translateX(0px)
-  50%
-    transform: translateX(20px)
+    &__text
+      font-size: 24px
+      &:before
+        @include fadeFromLeftBefore(7)
+
+.link-area
+  position: relative
+  top: 80px
+  width: 100%
+  display: flex
+  justify-content: center
+  opacity: 0
+  @include animation(fadeIn 1s ease $title-animation-duration * 9.5 forwards)
+
+@keyframes topLine
   100%
-    transform: translateX(0px)
+    right: 0
 
-@-webkit-keyframes goToToot
-  0%
-    transform: translateX(0px)
-  50%
-    transform: translateX(20px)
+@-webkit-keyframes topLine
   100%
-    transform: translateX(0px)
+    right: 0
 
-@-moz-keyframes goToToot
-  0%
-    transform: translateX(0px)
-  50%
-    transform: translateX(20px)
+@-moz-keyframes topLine
   100%
-    transform: translateX(0px)
+    right: 0
+
+@keyframes bottomLine
+  100%
+    left: 0
+
+@-webkit-keyframes bottomLine
+  100%
+    left: 0
+
+@-moz-keyframes bottomLine
+  100%
+    left: 0
+
+@keyframes rightLine
+  100%
+    top: 0
+
+@-webkit-keyframes rightLine
+  100%
+    top: 0
+
+@-moz-keyframes rightLine
+  100%
+    top: 0
+
+@keyframes leftLine
+  100%
+    bottom: 0
+
+@-webkit-keyframes leftLine
+  100%
+    bottom: 0
+
+@-moz-keyframes leftLine
+  100%
+    bottom: 0
+
+@keyframes fadeFromLeft
+  100%
+    width: 0
+
+@-webkit-keyframes fadeFromLeft
+  100%
+    width: 0
+
+@-moz-keyframes fadeFromLeft
+  100%
+    width: 0
+
+@keyframes penAnimation
+  10%
+    opacity: 1
+  30%
+    left: 80%
+    top: 72px
+  40%
+    top: 140px
+    left: 18%
+  50%
+    top: 140px
+    left: 18%
+  80%
+    top: 140px
+    left: 82%
+  90%
+    top: 200px
+    left: 48%
+  100%
+    top: 200px
+    left: 50%
+    opacity: 1
+
+@-webkit-keyframes fadeFromLeft
+  10%
+    opacity: 1
+  30%
+    left: 80%
+    top: 72px
+  40%
+    top: 140px
+    left: 18%
+  50%
+    top: 140px
+    left: 18%
+  80%
+    top: 140px
+    left: 82%
+  90%
+    top: 200px
+    left: 48%
+  100%
+    top: 200px
+    left: 50%
+    opacity: 1
+
+@-moz-keyframes fadeFromLeft
+  10%
+    opacity: 1
+  30%
+    left: 80%
+    top: 72px
+  40%
+    top: 140px
+    left: 18%
+  50%
+    top: 140px
+    left: 18%
+  80%
+    top: 140px
+    left: 82%
+  90%
+    top: 200px
+    left: 48%
+  100%
+    top: 200px
+    left: 50%
+    opacity: 1
+
+@keyframes fadeIn
+  100%
+    opacity: 1
+
+@-webkit-keyframes fadeIn
+  100%
+    opacity: 1
+
+@-moz-keyframes fadeIn
+  100%
+    opacity: 1
+
+
+
+@import 'memo'
+
+// @keyframes id
+//   100%
+//     right: 0
+//
+// @-webkit-keyframes id
+//   100%
+//     right: 0
+//
+// @-moz-keyframes id
+//   100%
+//     right: 0

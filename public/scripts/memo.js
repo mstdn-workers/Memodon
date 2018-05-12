@@ -46,7 +46,7 @@ function displayMemo (target, username, memo) {
 
   let goToToot = document.createElement('div')
   goToToot.className = 'col s6 center go-to-toot'
-  goToToot.innerHTML = `<a href="https://mstdn-workers.com/@${username}/${memo.status_id}" class="card-link"><i class="material-icons memo-link-icon">subdirectory_arrow_right</i> </a>`
+  goToToot.innerHTML = `<a href="https://mstdn-workers.com/@${username}/${memo.id}" class="card-link"><i class="material-icons memo-link-icon">subdirectory_arrow_right</i> </a>`
   rowInCard.appendChild(goToToot)
 
   target.appendChild(column)
