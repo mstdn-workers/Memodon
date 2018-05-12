@@ -1,5 +1,6 @@
 require 'sass/plugin/rack'
 require "sinatra/reloader" if development?
+require 'uri'
 
 # sassをコンパイルしてcssをよしなにしてくれるようにする
 use Sass::Plugin::Rack
@@ -17,5 +18,15 @@ get '/memo' do
 end
 
 get '/login' do
-  slim :login
+  client = MstdnIvory::Client.new('https://mstdn-workers.com')
+  id, secret = AppRegister.instance.client_info
+  uri = client.create_authorization_url(id, secret, 'read', AppRegister.instance.redirect_uri)
+  # &が一部のみ変換されるため修正する
+  uri.gsub!('%0A', '&')
+  redirect uri
+end
+
+get '/callback/oauth' do
+ p params
+ params
 end
