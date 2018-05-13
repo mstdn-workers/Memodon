@@ -5,7 +5,8 @@ searchElm.addEventListener('input', () => {
 })
 
 function getMemos (searchWord = '') {
-  fetch(`/api/memos?like=${searchWord}`)
+  console.log(document.cookie)
+  fetch(`/api/memos?like=${searchWord}`, { credentials: 'same-origin' } )
     .then(response => {
       return response.json()
     })
