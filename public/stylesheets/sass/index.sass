@@ -15,6 +15,24 @@
   right: 0%
   @include animation(fadeFromLeft $title-animation-duration linear $title-animation-duration * $timing forwards)
 
+@mixin flex
+  display: -webkit-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+
+@mixin justify-center
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  -webkit-justify-content: center
+  justify-content: center
+
+@mixin align-center
+  -webkit-box-align: center
+  -ms-flex-align: center
+  -webkit-align-items: center
+  align-items: center
+
 $index-title-width: 50vw
 $index-title-height: 280px
 $animation-line-width: 3px
@@ -24,7 +42,7 @@ $title-color: rgb(238, 155, 101)
 .logo
   position: absolute
   left: 5%
-  display: flex
+  @include flex
   align-items: content
 
 .navbar-menu
@@ -34,15 +52,15 @@ $title-color: rgb(238, 155, 101)
 .title-area
   width: 100%
   height: $index-title-height + 20px
-  display: flex
-  justify-content: center
+  @include flex
+  @include justify-center
   position: relative
   top: 60px
 
 .index-title
-  display: flex
-  align-items: center
-  justify-content: center
+  @include flex
+  @include align-center
+  @include justify-center
   position: relative
   width: $index-title-width
   height: $index-title-height
@@ -86,16 +104,16 @@ $title-color: rgb(238, 155, 101)
 
   &__content
     color: $title-color
-    display: flex
-    justify-content: center
-    align-items: center
+    @include flex
+    @include justify-center
+    @include align-center
     flex-flow: column
 
     &__base
       height: $index-title-height / 4
-      display: flex
-      justify-content: center
-      align-items: center
+      @include flex
+      @include justify-center
+      @include align-center
       position: relative
 
     &__label
@@ -126,8 +144,8 @@ $title-color: rgb(238, 155, 101)
   position: relative
   top: 80px
   width: 100%
-  display: flex
-  justify-content: center
+  @include flex
+  @include justify-center
   opacity: 0
   @include animation(fadeIn 1s ease $title-animation-duration * 9.5 forwards)
 
@@ -214,7 +232,7 @@ $title-color: rgb(238, 155, 101)
     left: 50%
     opacity: 1
 
-@-webkit-keyframes fadeFromLeft
+@-webkit-keyframes penAnimation
   10%
     opacity: 1
   30%
@@ -237,7 +255,7 @@ $title-color: rgb(238, 155, 101)
     left: 50%
     opacity: 1
 
-@-moz-keyframes fadeFromLeft
+@-moz-keyframes penAnimation
   10%
     opacity: 1
   30%
