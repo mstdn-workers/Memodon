@@ -1,6 +1,9 @@
 .logo {
   position: absolute;
   left: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   align-items: content; }
 
@@ -11,14 +14,29 @@
 .title-area {
   width: 100%;
   height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
   justify-content: center;
   position: relative;
   top: 60px; }
 
 .index-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
   justify-content: center;
   position: relative;
   width: 50vw;
@@ -77,14 +95,32 @@
     animation-fill-mode: both; }
   .index-title__content {
     color: #ee9b65;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
     align-items: center;
     flex-flow: column; }
     .index-title__content__base {
       height: 70px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
       display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
       justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
       align-items: center;
       position: relative; }
     .index-title__content__label {
@@ -139,7 +175,13 @@
   position: relative;
   top: 80px;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
   justify-content: center;
   opacity: 0;
   -webkit-animation: fadeIn 1s ease 3.8s forwards;
@@ -216,7 +258,7 @@
     top: 200px;
     left: 50%;
     opacity: 1; } }
-@-webkit-keyframes fadeFromLeft {
+@-webkit-keyframes penAnimation {
   10% {
     opacity: 1; }
   30% {
@@ -238,7 +280,7 @@
     top: 200px;
     left: 50%;
     opacity: 1; } }
-@-moz-keyframes fadeFromLeft {
+@-moz-keyframes penAnimation {
   10% {
     opacity: 1; }
   30% {
