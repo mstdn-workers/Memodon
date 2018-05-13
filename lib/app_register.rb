@@ -9,7 +9,11 @@ class AppRegister
   FILEPATH = 'etc/app_info'.freeze
   MSTDN_URL = 'https://mstdn-workers.com'.freeze
   APP_NAME = 'memodon'.freeze
-  REDIRECT_URI = 'https://localhost:4567/callback/oauth'.freeze
+  REDIRECT_URI = if ENV['RACK_ENV'] == 'production'
+    'https://memodon.herokuapp.com/callback/oauth'.freeze
+  else
+    'https://localhost:4567/callback/oauth'.freeze
+  end
 
   def register_app
     return if exist_info?
