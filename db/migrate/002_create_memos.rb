@@ -6,7 +6,5 @@ class CreateMemos < ActiveRecord::Migration[4.2] # :nodoc:
 
       t.timestamps
     end
-
-    add_index :memos, :status_id
   end
 end
