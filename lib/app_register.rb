@@ -9,7 +9,7 @@ class AppRegister
   FILEPATH = 'etc/app_info'.freeze
   MSTDN_URL = 'https://mstdn-workers.com'.freeze
   APP_NAME = 'memodon'.freeze
-  REDIRECT_URI = 'https://localhost/callback/oauth'.freeze
+  REDIRECT_URI = 'https://localhost:4567/callback/oauth'.freeze
 
   def register_app
     return if exist_info?
@@ -27,7 +27,7 @@ class AppRegister
 
   def client_info
     if exist_info?
-      File.read(FILEPATH).chomp.split('\n')
+      File.read(FILEPATH).chomp.split("\n")
     else
       client = MstdnIvory::Client.new(MSTDN_URL)
       res = client.create_app(APP_NAME, 'read', REDIRECT_URI)
