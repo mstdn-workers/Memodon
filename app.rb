@@ -12,6 +12,8 @@ use Rack::Session::Cookie,
   expire_after: 2_592_000,
   secret: SecureRandom.alphanumeric(64)
 
+require './helpers'
+
 require './route/api'
 
 get '/' do
@@ -19,8 +21,13 @@ get '/' do
 end
 
 get '/memo' do
-  redirect '/login' unless session[:user_id] 
+  redirect '/login' unless login?
   slim :memo
+end
+
+get '/logout' do
+  session[:user_id] = nil
+  redirect '/'
 end
 
 get '/login' do

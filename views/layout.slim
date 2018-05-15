@@ -17,12 +17,24 @@ html
         a.sidenav-trigger href="#" data-target="mobile-nav"
           i.material-icons menu
         ul.right.hide-on-med-and-down.navbar-menu
-          li
-            a href="/login" Login
+          - if login?
+            li
+              a href="/memo" Memos
+            li
+              a href="/logout" Logout
+          - else
+            li
+              a href="/login" Login
 
     ul#mobile-nav.sidenav
-      li
-        a href="/login" Login
+      - if login?
+        li
+          a href="/memo" Memos
+        li
+          a href="/logout" Logout
+      - else
+        li
+          a href="/login" Login
 
     .container
       == yield
