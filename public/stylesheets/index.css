@@ -1,6 +1,6 @@
 .logo {
   position: absolute;
-  left: 5%;
+  left: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -9,7 +9,7 @@
 
 .navbar-menu {
   position: absolute;
-  right: 5%; }
+  right: 10%; }
 
 .title-area {
   width: 100%;
@@ -24,6 +24,23 @@
   justify-content: center;
   position: relative;
   top: 60px; }
+
+.sidenav-top-area {
+  height: 10%;
+  font-size: 32px;
+  font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center; }
 
 .index-title {
   display: -webkit-box;
