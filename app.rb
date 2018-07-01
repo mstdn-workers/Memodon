@@ -14,7 +14,7 @@ use Rack::Session::Cookie,
 
 require './helpers'
 
-require './route/api'
+require './routes/api'
 
 get '/' do
   slim :index
