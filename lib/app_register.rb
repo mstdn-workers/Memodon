@@ -12,7 +12,7 @@ class AppRegister
   REDIRECT_URI = if ENV['RACK_ENV'] == 'production'
     'https://memodon.herokuapp.com/callback/oauth'.freeze
   else
-    'https://localhost:4567/callback/oauth'.freeze
+    'http://localhost:4567/callback/oauth'.freeze
   end
 
   def register_app
