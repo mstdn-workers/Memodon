@@ -12,7 +12,6 @@ class MemoObserver
 
   def behavior
     timeline = @client.get('/api/v1/timelines/tag/メモ', { local: 'true', since_id: @since_id,  max_id: @max_id, limit: 40 })
-    p timeline[-1]
     insert_database(timeline)
 
     # 過去のtootをクロールするための処理
