@@ -50,5 +50,10 @@ function displayMemo (target, username, memo) {
   goToToot.innerHTML = `<a href="https://mstdn-workers.com/@${username}/${memo.id}" class="card-link"><i class="material-icons memo-link-icon">subdirectory_arrow_right</i> </a>`
   rowInCard.appendChild(goToToot)
 
+  let deleteToot = document.createElement('div')
+  deleteToot.className = 'col s6 center delete-toot'
+  deleteToot.innerHTML = `<a href="/delete/${memo.id}" class="card-link"><i class="material-icons memo-link-icon">delete_forever</i> </a>`
+  rowInCard.appendChild(deleteToot)
+
   target.appendChild(column)
 }
