@@ -22,7 +22,7 @@ class AppRegister
   end
 
   def exist_info?
-    File.exist? FILEPATH
+    File.exist?(FILEPATH) || (ENV['CLIENT_ID'] && ENV['CLIENT_SECRET'])
   end
 
   def redirect_uri
@@ -31,12 +31,24 @@ class AppRegister
 
   def client_info
     if exist_info?
-      File.read(FILEPATH).chomp.split("\n")
+      if File.exist?(FILEPATH)
+        return client_info_in_file
+      else
+        return client_info_in_env
+      end
     else
       client = MstdnIvory::Client.new(MSTDN_URL)
       res = client.create_app(APP_NAME, 'read', REDIRECT_URI)
       [res.client_id, res.client_secret]
     end
+  end
+
+  def client_info_in_file
+    File.read(FILEPATH).chomp.split("\n")
+  end
+
+  def client_info_in_env
+    [ENV['CLIENT_ID'], ENV['CLIENT_SECRET']]
   end
 
   def save_client_info(id, secret)
