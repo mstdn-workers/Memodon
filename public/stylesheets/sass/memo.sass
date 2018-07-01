@@ -1,3 +1,10 @@
+@mixin animation($animation-name)
+  -webkit-animation: $animation-name
+  -moz-animation: $animation-name
+  animation: $animation-name
+  -webkit-animation-fill-mode: both
+  -moz-animation-fill-mode: both
+
 .status-content
   font-weight: 400
   font-size: 18px
