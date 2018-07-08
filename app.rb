@@ -46,3 +46,10 @@ get '/callback/oauth' do
   session[:user_id] = id.to_i
   redirect '/memo'
 end
+
+delete '/memo/:memo_id' do
+  pp Memo.find(params[:memo_id])
+  deleted_user = Memo.find(params[:memo_id])
+  deleted_user.destroy
+  redirect "memo"
+end

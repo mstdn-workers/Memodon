@@ -66,5 +66,7 @@ function deleteMemo(id) {
     let xhr = new XMLHttpRequest()
     xhr.open("DELETE", url, true)
     xhr.send(null)
+
+    setTimeout('getMemos()', 500)
   }
 }
