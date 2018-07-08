@@ -1,128 +1,63 @@
-/*
-Error: Undefined mixin 'animation'.
-        on line 19 of public/stylesheets/sass/memo.sass, in `animation'
-        from line 19 of public/stylesheets/sass/memo.sass
+.status-content {
+  font-weight: 400;
+  font-size: 18px;
+  word-break: break-all; }
 
-14:   font-size: 18px
-15:   color: black
-16: 
-17: .go-to-toot
-18:   &:hover
-19:     @include animation(goToToot 0.5s ease 0.2s infinite)
-20: 
-21: .memo-link-icon
-22:   font-size: 32px
-23: 
-24: .search-area
+.actions {
+  border-top: 1px solid rgba(156, 156, 156, 0.5);
+  padding-top: 12px;
+  margin-top: 24px;
+  margin-bottom: 2px; }
 
-Backtrace:
-public/stylesheets/sass/memo.sass:19:in `animation'
-public/stylesheets/sass/memo.sass:19
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/stack.rb:98:in `block in with_mixin'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/stack.rb:135:in `with_frame'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/stack.rb:98:in `with_mixin'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:350:in `visit_mixin'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/stack.rb:79:in `block in with_base'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/stack.rb:135:in `with_frame'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/stack.rb:79:in `with_base'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:444:in `map'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/stack.rb:79:in `block in with_base'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/stack.rb:135:in `with_frame'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/stack.rb:79:in `with_base'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:444:in `map'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/stack.rb:79:in `block in with_base'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/stack.rb:135:in `with_frame'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/stack.rb:79:in `with_base'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:52:in `map'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:161:in `visit'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/visitors/perform.rb:10:in `visit'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/root_node.rb:36:in `css_tree'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/engine.rb:307:in `render_with_sourcemap'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:209:in `each'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/plugin.rb:82:in `update_stylesheets'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/plugin.rb:54:in `check_for_updates'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sass-3.5.6/lib/sass/plugin/rack.rb:51:in `call'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/rack-protection-2.0.1/lib/rack/protection/xss_header.rb:18:in `call'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/rack-protection-2.0.1/lib/rack/protection/path_traversal.rb:16:in `call'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/rack-protection-2.0.1/lib/rack/protection/json_csrf.rb:26:in `call'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/rack-protection-2.0.1/lib/rack/protection/base.rb:50:in `call'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/rack-protection-2.0.1/lib/rack/protection/base.rb:50:in `call'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/rack-protection-2.0.1/lib/rack/protection/frame_options.rb:31:in `call'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/rack-2.0.5/lib/rack/logger.rb:15:in `call'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/rack-2.0.5/lib/rack/common_logger.rb:33:in `call'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sinatra-2.0.1/lib/sinatra/base.rb:231:in `call'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sinatra-2.0.1/lib/sinatra/base.rb:224:in `call'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/rack-2.0.5/lib/rack/head.rb:12:in `call'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/rack-2.0.5/lib/rack/method_override.rb:22:in `call'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sinatra-2.0.1/lib/sinatra/show_exceptions.rb:22:in `call'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sinatra-2.0.1/lib/sinatra/base.rb:194:in `call'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sinatra-2.0.1/lib/sinatra/base.rb:1957:in `call'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sinatra-2.0.1/lib/sinatra/base.rb:1501:in `block in call'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sinatra-2.0.1/lib/sinatra/base.rb:1728:in `synchronize'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/sinatra-2.0.1/lib/sinatra/base.rb:1501:in `call'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/thin-1.7.2/lib/thin/connection.rb:86:in `block in pre_process'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/thin-1.7.2/lib/thin/connection.rb:84:in `catch'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/thin-1.7.2/lib/thin/connection.rb:84:in `pre_process'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/thin-1.7.2/lib/thin/connection.rb:53:in `process'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/thin-1.7.2/lib/thin/connection.rb:39:in `receive_data'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/eventmachine-1.2.6/lib/eventmachine.rb:195:in `run_machine'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/eventmachine-1.2.6/lib/eventmachine.rb:195:in `run'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/thin-1.7.2/lib/thin/backends/base.rb:73:in `start'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/thin-1.7.2/lib/thin/server.rb:162:in `start'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/thin-1.7.2/lib/thin/controllers/controller.rb:87:in `start'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/thin-1.7.2/lib/thin/runner.rb:203:in `run_command'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/thin-1.7.2/lib/thin/runner.rb:159:in `run!'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/gems/thin-1.7.2/bin/thin:6:in `<top (required)>'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/bin/thin:23:in `load'
-/Users/t0p_l1ght/Documents/Memodon/vendor/bundle/ruby/2.5.0/bin/thin:23:in `<top (required)>'
-/Users/t0p_l1ght/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/bundler-1.16.1/lib/bundler/cli/exec.rb:75:in `load'
-/Users/t0p_l1ght/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/bundler-1.16.1/lib/bundler/cli/exec.rb:75:in `kernel_load'
-/Users/t0p_l1ght/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/bundler-1.16.1/lib/bundler/cli/exec.rb:28:in `run'
-/Users/t0p_l1ght/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/bundler-1.16.1/lib/bundler/cli.rb:424:in `exec'
-/Users/t0p_l1ght/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/bundler-1.16.1/lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
-/Users/t0p_l1ght/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/bundler-1.16.1/lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
-/Users/t0p_l1ght/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/bundler-1.16.1/lib/bundler/vendor/thor/lib/thor.rb:387:in `dispatch'
-/Users/t0p_l1ght/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/bundler-1.16.1/lib/bundler/cli.rb:27:in `dispatch'
-/Users/t0p_l1ght/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/bundler-1.16.1/lib/bundler/vendor/thor/lib/thor/base.rb:466:in `start'
-/Users/t0p_l1ght/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/bundler-1.16.1/lib/bundler/cli.rb:18:in `start'
-/Users/t0p_l1ght/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/bundler-1.16.1/exe/bundle:30:in `block in <top (required)>'
-/Users/t0p_l1ght/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/bundler-1.16.1/lib/bundler/friendly_errors.rb:122:in `with_friendly_errors'
-/Users/t0p_l1ght/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/bundler-1.16.1/exe/bundle:22:in `<top (required)>'
-/Users/t0p_l1ght/.rbenv/versions/2.5.0/bin/bundle:23:in `load'
-/Users/t0p_l1ght/.rbenv/versions/2.5.0/bin/bundle:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Undefined mixin 'animation'.\A         on line 19 of public/stylesheets/sass/memo.sass, in `animation'\A         from line 19 of public/stylesheets/sass/memo.sass\A \A 14:   font-size: 18px\A 15:   color: black\A 16: \A 17: .go-to-toot\A 18:   &:hover\A 19:     @include animation(goToToot 0.5s ease 0.2s infinite)\A 20: \A 21: .memo-link-icon\A 22:   font-size: 32px\A 23: \A 24: .search-area"; }
+.card-link {
+  font-weight: 600;
+  font-size: 18px;
+  color: black; }
+
+.go-to-toot:hover {
+  -webkit-animation: goToToot 0.5s ease 0.2s infinite;
+  -moz-animation: goToToot 0.5s ease 0.2s infinite;
+  animation: goToToot 0.5s ease 0.2s infinite;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both; }
+
+.memo-link-icon {
+  font-size: 32px; }
+
+.search-area {
+  position: fixed;
+  height: 10vh;
+  bottom: 6vh;
+  left: 8vh;
+  right: 8vh;
+  border-radius: 8px;
+  display: flex;
+  align-items: center; }
+
+.empty-area {
+  height: 25vh;
+  width: 25vh; }
+
+@keyframes goToToot {
+  0% {
+    transform: translateX(0px); }
+  50% {
+    transform: translateX(20px); }
+  100% {
+    transform: translateX(0px); } }
+@-webkit-keyframes goToToot {
+  0% {
+    transform: translateX(0px); }
+  50% {
+    transform: translateX(20px); }
+  100% {
+    transform: translateX(0px); } }
+@-moz-keyframes goToToot {
+  0% {
+    transform: translateX(0px); }
+  50% {
+    transform: translateX(20px); }
+  100% {
+    transform: translateX(0px); } }
+
+/*# sourceMappingURL=memo.css.map */

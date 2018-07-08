@@ -5,7 +5,6 @@ searchElm.addEventListener('input', () => {
 })
 
 function getMemos (searchWord = '') {
-  console.log(document.cookie)
   fetch(`/api/memos?like=${searchWord}`, { credentials: 'same-origin' } )
     .then(response => {
       return response.json()
@@ -50,5 +49,24 @@ function displayMemo (target, username, memo) {
   goToToot.innerHTML = `<a href="https://mstdn-workers.com/@${username}/${memo.id}" class="card-link"><i class="material-icons memo-link-icon">subdirectory_arrow_right</i> </a>`
   rowInCard.appendChild(goToToot)
 
+  let deleteToot = document.createElement('div')
+  let memoId = String(memo.id)
+  deleteToot.className = 'col s6 center delete-toot'
+  deleteToot.innerHTML = `<a class="card-link" onclick="deleteMemo('${memoId}')">
+  <i class="material-icons memo-link-icon">delete_forever</i>
+  </a>`
+  rowInCard.appendChild(deleteToot)
+
   target.appendChild(column)
+}
+
+function deleteMemo(id) {
+  if(confirm('メモは二度と戻りません。削除しますか?(実際のTootは削除されません')){
+    let url = `/memo/${id}`
+    let xhr = new XMLHttpRequest()
+    xhr.open("DELETE", url, true)
+    xhr.send(null)
+
+    setTimeout('getMemos()', 500)
+  }
 }
